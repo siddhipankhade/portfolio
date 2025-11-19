@@ -1,44 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 export default function Portfolio() {
   const [open, setOpen] = useState(false);
-  const [dark, setDark] = useState(false);
-
-  // read saved preference or system
-  useEffect(() => {
-    const saved = localStorage.getItem("theme");
-    if (saved === "dark") {
-      document.documentElement.setAttribute("data-theme", "dark");
-      document.documentElement.classList.add("dark");
-      setDark(true);
-    } else if (saved === "light") {
-      document.documentElement.setAttribute("data-theme", "light");
-      document.documentElement.classList.remove("dark");
-      setDark(false);
-    } else {
-      // default to system preference
-      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-      if (prefersDark) {
-        document.documentElement.setAttribute("data-theme", "dark");
-        document.documentElement.classList.add("dark");
-        setDark(true);
-      }
-    }
-  }, []);
-
-  const toggleDark = () => {
-    const next = !dark;
-    setDark(next);
-    if (next) {
-      document.documentElement.setAttribute("data-theme", "dark");
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.setAttribute("data-theme", "light");
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  };
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 antialiased text-base md:text-lg">
@@ -57,43 +20,54 @@ export default function Portfolio() {
           </div>
         </div>
 
-        {/* right: desktop nav + theme toggle */}
-        <div className="flex items-center gap-4">
-          <nav className="hidden md:flex gap-6 items-center">
-            <a href="#projects" className="meta-sm md:text-base link-underline">Projects</a>
-            <a href="#skills" className="meta-sm md:text-base link-underline">Skills</a>
-            <a href="#about" className="meta-sm md:text-base link-underline">About</a>
-            <a href="#contact" className="meta-sm md:text-base link-underline">Contact</a>
-            <a href="#resume" className="ml-2 btn-outline md:text-sm">Resume</a>
-          </nav>
+        {/* right: desktop nav only */}
+        <nav className="hidden md:flex gap-6 items-center">
+          <a href="#projects" className="meta-sm md:text-base link-underline">Projects</a>
+          <a href="#skills" className="meta-sm md:text-base link-underline">Skills</a>
+          <a href="#about" className="meta-sm md:text-base link-underline">About</a>
+          <a href="#contact" className="meta-sm md:text-base link-underline">Contact</a>
+          <a href="#resume" className="ml-2 btn-outline md:text-sm">Resume</a>
+        </nav>
 
-          {/* dark toggle button */}
+        {/* mobile hamburger */}
+        <div className="md:hidden">
           <button
-            aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
-            onClick={toggleDark}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((s) => !s)}
             className="p-2 rounded-md border bg-white shadow-sm"
-            title="Toggle theme"
           >
-            {dark ? (
-              // sun icon (light)
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364 6.364l-1.414-1.414M7.05 7.05 5.636 5.636m12.728 0L17.95 7.05M7.05 16.95l-1.414 1.414" />
+            {!open ? (
+              // hamburger
+              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 7h16M4 12h16M4 17h16" />
               </svg>
             ) : (
-              // moon icon (dark)
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M17.293 13.293a8 8 0 11-10.586-10.586 7 7 0 1010.586 10.586z" />
+              // X
+              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 6l12 12M6 18L18 6" />
               </svg>
             )}
           </button>
+        </div>
 
-          {/* mobile hamburger (keeps existing) */}
-          <div className="md:hidden">
-            {/* ...your existing hamburger button here... */}
+        {/* mobile dropdown */}
+        <div
+          className={`md:hidden absolute top-full right-0 left-0 z-40 transform origin-top transition-all ${
+            open ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0 pointer-events-none"
+          }`}
+        >
+          <div className="bg-white shadow-md rounded-b-lg p-4">
+            <nav className="flex flex-col gap-3">
+              <a onClick={() => setOpen(false)} href="#projects" className="py-2 text-base link-underline">Projects</a>
+              <a onClick={() => setOpen(false)} href="#skills" className="py-2 text-base link-underline">Skills</a>
+              <a onClick={() => setOpen(false)} href="#about" className="py-2 text-base link-underline">About</a>
+              <a onClick={() => setOpen(false)} href="#contact" className="py-2 text-base link-underline">Contact</a>
+              <a onClick={() => setOpen(false)} href="#resume" className="mt-2 btn-outline text-center">Resume</a>
+            </nav>
           </div>
         </div>
       </header>
-
 
       <main className="max-w-5xl mx-auto p-6">
         {/* Hero */}
@@ -135,12 +109,14 @@ export default function Portfolio() {
             {/* Grooviti */}
             <article className="p-6 bg-white rounded-2xl shadow-sm">
               <h4 className="text-lg md:text-xl font-bold">Grooviti — Event Listing & Booking Platform</h4>
-              <p className="mt-2 text-base md:text-lg text-gray-700">A full-stack web application to discover and book local events and sports venues. Includes an admin dashboard for managing listings and analytics.</p>
+              <p className="mt-2 text-base md:text-lg text-gray-700">
+                A full-stack web application to discover and book local events and sports venues.
+              </p>
               <ul className="mt-3 text-base md:text-lg text-gray-700 list-disc list-inside">
-                <li>Tech: React.js, MongoDB, Node.js </li>
-                <li>Built responsive UI components (Home, Communities, Events)</li>
-                <li>Integrated payment flow and listings API </li>
-                <li>Achieved 200+ registrations, 10+ active events, and 95% successful payment rate</li>
+                <li>Tech: React.js, MongoDB, Node.js</li>
+                <li>Built responsive UI components</li>
+                <li>Integrated payment flow and listings API</li>
+                <li>Achieved 200+ registrations</li>
               </ul>
               <div className="mt-4 flex gap-3">
                 <a href="https://grooviti.com/" className="text-base hover:underline">Live demo</a>
@@ -148,17 +124,18 @@ export default function Portfolio() {
               </div>
             </article>
 
-            {/* Example Additional Project */}
+            {/* Portfolio */}
             <article className="p-6 bg-white rounded-2xl shadow-sm">
-              <h4 className="text-lg md:text-xl font-bold">Portfolio Website (this site)</h4>
-              <p className="mt-2 text-base md:text-lg text-gray-700">A responsive single-page React application built with Tailwind CSS showcasing projects, skills, and contact links.</p>
+              <h4 className="text-lg md:text-xl font-bold">Portfolio Website</h4>
+              <p className="mt-2 text-base md:text-lg text-gray-700">
+                A responsive personal portfolio built with React and Tailwind CSS.
+              </p>
               <ul className="mt-3 text-base md:text-lg text-gray-700 list-disc list-inside">
                 <li>Tech: React, Tailwind CSS</li>
-                <li>Features: Hero, Projects grid, Skills list, Contact form</li>
-                <li>Designed for easy deployment on Vercel / Netlify</li>
+                <li>Beautiful responsive UI</li>
+                <li>Deployed on Vercel</li>
               </ul>
               <div className="mt-4 flex gap-3">
-                
                 <a href="https://github.com/siddhipankhade/portfolio" className="text-base hover:underline">Source</a>
               </div>
             </article>
@@ -173,14 +150,17 @@ export default function Portfolio() {
               <h5 className="text-lg font-semibold">Programming</h5>
               <p className="text-base mt-2">Java, Python, JavaScript, C++</p>
             </div>
+
             <div className="p-4 bg-white rounded-lg shadow-sm">
               <h5 className="text-lg font-semibold">Frontend</h5>
               <p className="text-base mt-2">React.js, HTML, Tailwind CSS</p>
             </div>
+
             <div className="p-4 bg-white rounded-lg shadow-sm">
               <h5 className="text-lg font-semibold">Backend & DB</h5>
               <p className="text-base mt-2">Node.js, MongoDB, MySQL</p>
             </div>
+
             <div className="p-4 bg-white rounded-lg shadow-sm">
               <h5 className="text-lg font-semibold">Tools & DevOps</h5>
               <p className="text-base mt-2">Git, GitHub, Postman, VS Code</p>
@@ -192,7 +172,7 @@ export default function Portfolio() {
         <section id="about" className="py-8">
           <h3 className="text-2xl md:text-3xl font-semibold">About Me</h3>
           <div className="mt-4 p-6 bg-white rounded-xl shadow-sm text-base text-gray-700">
-            I am a TE Computer Engineering student at PCCOE&R with a strong interest in Software Engineering and Cybersecurity. I enjoy building project solutions and learning by shipping features. Outside coding, I was a club member in ACM and C-Cube.I also did cybersecurity simulations to expand my practical skills.
+            I am a TE Computer Engineering student at PCCOE&R with a strong interest in Software Engineering and Cybersecurity.
           </div>
         </section>
 
@@ -227,7 +207,6 @@ export default function Portfolio() {
 
               <p className="text-sm text-gray-500 mt-2">Your message will be sent directly to my inbox.</p>
             </form>
-
           </div>
         </section>
 
