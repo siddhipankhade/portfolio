@@ -116,7 +116,8 @@ export default function Portfolio() {
                 <li>Tech: React.js, MongoDB, Node.js</li>
                 <li>Built responsive UI components</li>
                 <li>Integrated payment flow and listings API</li>
-                <li>Achieved 200+ registrations</li>
+                <li>Achieved Over 200+ registrations, 10+ events listed, 95% successful
+payments</li>
               </ul>
               <div className="mt-4 flex gap-3">
                 <a href="https://grooviti.com/" className="text-base hover:underline">Live demo</a>
@@ -157,13 +158,17 @@ export default function Portfolio() {
             </div>
 
             <div className="p-4 bg-white rounded-lg shadow-sm">
-              <h5 className="text-lg font-semibold">Backend & DB</h5>
-              <p className="text-base mt-2">Node.js, MongoDB, MySQL</p>
+              <h5 className="text-lg font-semibold">Databases</h5>
+              <p className="text-base mt-2">MongoDB, MySQL</p>
             </div>
 
             <div className="p-4 bg-white rounded-lg shadow-sm">
               <h5 className="text-lg font-semibold">Tools & DevOps</h5>
               <p className="text-base mt-2">Git, GitHub, Postman, VS Code</p>
+            </div>
+            <div className="p-4 bg-white rounded-lg shadow-sm">
+              <h5 className="text-lg font-semibold">Cybersecurity Concepts</h5>
+              <p className="text-base mt-2">IAM, Threat detection, Risk Assessment, Log analysis, Information Security</p>
             </div>
           </div>
         </section>
@@ -172,7 +177,8 @@ export default function Portfolio() {
         <section id="about" className="py-8">
           <h3 className="text-2xl md:text-3xl font-semibold">About Me</h3>
           <div className="mt-4 p-6 bg-white rounded-xl shadow-sm text-base text-gray-700">
-            I am a TE Computer Engineering student at PCCOE&R with a strong interest in Software Engineering and Cybersecurity.
+           Third Year Engineering student with a strong interest in **Cybersecurity and Full Stack Development**. Passionate about building secure, scalable web applications and learning modern security practices through hands-on projects and continuous learning.
+
           </div>
         </section>
 
