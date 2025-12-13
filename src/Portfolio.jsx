@@ -16,7 +16,7 @@ export default function Portfolio() {
           </div>
           <div>
             <h1 className="text-xl md:text-2xl font-semibold">Siddhi Pankhade</h1>
-            <p className="meta-sm md:meta-sm">Computer Engineering • Software Engineer Intern</p>
+            <p className="meta-sm md:meta-sm">Computer Engineering</p>
           </div>
         </div>
 
@@ -26,7 +26,7 @@ export default function Portfolio() {
           <a href="#skills" className="meta-sm md:text-base link-underline">Skills</a>
           <a href="#about" className="meta-sm md:text-base link-underline">About</a>
           <a href="#contact" className="meta-sm md:text-base link-underline">Contact</a>
-          <a href="#resume" className="ml-2 btn-outline md:text-sm">Resume</a>
+          {/* <a href="#resume" className="ml-2 btn-outline md:text-sm">Resume</a> */}
         </nav>
 
         {/* mobile hamburger */}
@@ -73,10 +73,10 @@ export default function Portfolio() {
         {/* Hero */}
         <section className="grid md:grid-cols-2 gap-10 items-center py-12">
           <div className="glass-card p-6">
-            <h2 className="text-3xl md:text-4xl font-bold leading-tight">Hi, I’m Siddhi — a software engineer in the making.</h2>
+            <h2 className="text-3xl md:text-4xl font-bold leading-tight">Hi, I’m Siddhi — a engineer in the making.</h2>
             <p className="mt-4 text-lg md:text-xl text-gray-700 leading-relaxed">
               I build responsive web apps with React and Node. I’m passionate about clean UI, reliable backend systems, and learning secure development practices.
-              Currently seeking Software Engineer internships for hands-on product work.
+              Currently seeking internships for hands-on product work.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
@@ -97,7 +97,7 @@ export default function Portfolio() {
               <li><a href="https://github.com/siddhipankhade" className="hover:underline">GitHub</a></li>
               <li><a href="http://www.linkedin.com/in/siddhi-pankhade-2811bb24a" className="hover:underline">LinkedIn</a></li>
               <li><a href="https://grooviti.com/" className="hover:underline">Grooviti (Live)</a></li>
-              <li id="resume"><a href="#" className="hover:underline">Download Resume (replace link)</a></li>
+              {/* <li id="resume"><a href="#" className="hover:underline">Download Resume </a></li> */}
             </ul>
           </div>
         </section>
