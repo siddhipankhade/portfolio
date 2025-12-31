@@ -149,12 +149,16 @@ payments</li>
           <div className="mt-4 grid sm:grid-cols-2 gap-6">
             <div className="p-4 bg-white rounded-lg shadow-sm">
               <h5 className="text-lg font-semibold">Programming Languages</h5>
-              <p className="text-base mt-2">Java, Python, JavaScript</p>
+              <p className="text-base mt-2">Python, C++, JavaScript</p>
             </div>
 
             <div className="p-4 bg-white rounded-lg shadow-sm">
               <h5 className="text-lg font-semibold">Frontend</h5>
               <p className="text-base mt-2">React.js, HTML, Tailwind CSS</p>
+            </div>
+            <div className="p-4 bg-white rounded-lg shadow-sm">
+              <h5 className="text-lg font-semibold">Backend</h5>
+              <p className="text-base mt-2">Node.js, Rest APIs</p>
             </div>
 
             <div className="p-4 bg-white rounded-lg shadow-sm">
@@ -172,7 +176,7 @@ payments</li>
             </div>
             <div className="p-4 bg-white rounded-lg shadow-sm">
               <h5 className="text-lg font-semibold">Soft Skills</h5>
-              <p className="text-base mt-2">Analytical thinking, Time management, Self-learning attitude, Communication Skills</p>
+              <p className="text-base mt-2">Analytical thinking, Time management, Self-learner, Communication Skills</p>
             </div>
           </div>
         </section>
@@ -181,7 +185,7 @@ payments</li>
         <section id="about" className="py-8">
           <h3 className="text-2xl md:text-3xl font-semibold">About Me</h3>
           <div className="mt-4 p-6 bg-white rounded-xl shadow-sm text-base text-gray-700">
-           Third Year Engineering student with a strong interest in **Cybersecurity and Full Stack Development**. Passionate about building secure, scalable web applications and learning modern security practices through hands-on projects and continuous learning.
+           Third Year Engineering student with a strong interest in Cybersecurity and Software Development. Passionate about building secure, scalable applications and learning modern security practices through hands-on projects and continuous learning.
 
           </div>
         </section>
