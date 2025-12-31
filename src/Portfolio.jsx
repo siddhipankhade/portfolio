@@ -148,8 +148,8 @@ payments</li>
           <h3 className="text-2xl md:text-3xl font-semibold">Skills</h3>
           <div className="mt-4 grid sm:grid-cols-2 gap-6">
             <div className="p-4 bg-white rounded-lg shadow-sm">
-              <h5 className="text-lg font-semibold">Programming</h5>
-              <p className="text-base mt-2">Java, Python, JavaScript, C++</p>
+              <h5 className="text-lg font-semibold">Programming Languages</h5>
+              <p className="text-base mt-2">Java, Python, JavaScript</p>
             </div>
 
             <div className="p-4 bg-white rounded-lg shadow-sm">
@@ -164,11 +164,15 @@ payments</li>
 
             <div className="p-4 bg-white rounded-lg shadow-sm">
               <h5 className="text-lg font-semibold">Tools & DevOps</h5>
-              <p className="text-base mt-2">Git, GitHub, Postman, VS Code</p>
+              <p className="text-base mt-2">Nmap, Wireshark,Burp Suite, Kali Linux, Git, GitHub, Postman, VS Code</p>
             </div>
             <div className="p-4 bg-white rounded-lg shadow-sm">
               <h5 className="text-lg font-semibold">Cybersecurity Concepts</h5>
-              <p className="text-base mt-2">IAM, Threat detection, Risk Assessment, Log analysis, Information Security</p>
+              <p className="text-base mt-2">IAM, Threat detection, Risk Assessment, Log analysis, Information Security, Vulnerability Assessment, Penetration Testing, Ethical Hacking Concepts, Network Security Fundamentals, CIA Triad</p>
+            </div>
+            <div className="p-4 bg-white rounded-lg shadow-sm">
+              <h5 className="text-lg font-semibold">Soft Skills</h5>
+              <p className="text-base mt-2">Analytical thinking, Time management, Self-learning attitude, Communication Skills</p>
             </div>
           </div>
         </section>
