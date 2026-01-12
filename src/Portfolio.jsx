@@ -167,17 +167,19 @@ payments</li>
             </div>
 
             <div className="p-4 bg-white rounded-lg shadow-sm">
-              <h5 className="text-lg font-semibold">Tools & DevOps</h5>
-              <p className="text-base mt-2">Nmap, Wireshark,Burp Suite, Kali Linux, Git, GitHub, Postman, VS Code</p>
+              <h5 className="text-lg font-semibold">Version Control </h5>
+              <p className="text-base mt-2">Git, GitHub</p>
+               {/* <p className="text-base mt-2">Nmap, Wireshark,Burp Suite, Kali Linux, Git, GitHub, Postman, VS Code</p> */}
+
             </div>
-            <div className="p-4 bg-white rounded-lg shadow-sm">
+            {/* <div className="p-4 bg-white rounded-lg shadow-sm">
               <h5 className="text-lg font-semibold">Cybersecurity Concepts</h5>
               <p className="text-base mt-2">IAM, Threat detection, Risk Assessment, Log analysis, Information Security, Vulnerability Assessment, Penetration Testing, Ethical Hacking Concepts, Network Security Fundamentals, CIA Triad</p>
-            </div>
-            <div className="p-4 bg-white rounded-lg shadow-sm">
+            </div> */}
+            {/* <div className="p-4 bg-white rounded-lg shadow-sm">
               <h5 className="text-lg font-semibold">Soft Skills</h5>
               <p className="text-base mt-2">Analytical thinking, Time management, Self-learner, Communication Skills</p>
-            </div>
+            </div> */}
           </div>
         </section>
 
