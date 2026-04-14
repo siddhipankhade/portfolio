@@ -24,6 +24,7 @@ export default function Portfolio() {
         <nav className="hidden md:flex gap-6 items-center">
           <a href="#projects" className="meta-sm md:text-base link-underline">Projects</a>
           <a href="#skills" className="meta-sm md:text-base link-underline">Skills</a>
+          <a href="#internship" className="meta-sm md:text-base link-underline">Internship</a>
           <a href="#about" className="meta-sm md:text-base link-underline">About</a>
           <a href="#contact" className="meta-sm md:text-base link-underline">Contact</a>
           {/* <a href="#resume" className="ml-2 btn-outline md:text-sm">Resume</a> */}
@@ -106,6 +107,23 @@ export default function Portfolio() {
         <section id="projects" className="py-8">
           <h3 className="text-2xl md:text-3xl font-semibold">Projects</h3>
           <div className="mt-6 project-list">
+            {/* SmartHire */}
+            <article className="p-6 bg-white rounded-2xl shadow-sm">
+              <h4 className="text-lg md:text-xl font-bold">SmartHire — AI Interview Coach</h4>
+              <p className="mt-2 text-base md:text-lg text-gray-700">
+                An AI-powered platform that simulates interview scenarios and provides real-time feedback.
+              </p>
+              <ul className="mt-3 text-base md:text-lg text-gray-700 list-disc list-inside">
+                <li>Tech: Next.js, TypeScript, Prisma, MongoDB, Google Generative AI</li>
+                <li>Used speech-to-text, NLP, and sentiment analysis to evaluate responses</li>
+                <li>Analyzed confidence, speaking patterns, and answer quality</li>
+                <li>Resume-based question generation with AI</li>
+              </ul>
+              {/* <div className="mt-4 flex gap-3">
+                <a href="#" className="text-base hover:underline">Live demo</a>
+                <a href="#" className="text-base hover:underline">Source</a>
+              </div> */}
+            </article>
             {/* Grooviti */}
             <article className="p-6 bg-white rounded-2xl shadow-sm">
               <h4 className="text-lg md:text-xl font-bold">Grooviti — Event Listing & Booking Platform</h4>
@@ -120,7 +138,7 @@ export default function Portfolio() {
 payments</li>
               </ul>
               <div className="mt-4 flex gap-3">
-                <a href="https://grooviti.com/" className="text-base hover:underline">Live demo</a>
+                <a href="https://grooviti.in/" className="text-base hover:underline">Live demo</a>
                 <a href="https://github.com/Aditya25-github/grooviti" className="text-base hover:underline">Source</a>
               </div>
             </article>
@@ -180,6 +198,26 @@ payments</li>
               <h5 className="text-lg font-semibold">Soft Skills</h5>
               <p className="text-base mt-2">Analytical thinking, Time management, Self-learner, Communication Skills</p>
             </div> */}
+          </div>
+        </section>
+
+        {/* Internship */}
+        <section id="internship" className="py-8">
+          <h3 className="text-2xl md:text-3xl font-semibold">Internship</h3>
+
+          <div className="mt-6">
+            <div className="p-6 bg-white rounded-2xl shadow-sm">
+              <h4 className="text-lg md:text-xl font-bold">
+                Cybersecurity Intern — SkillCraft Technology
+              </h4>
+              <p className="text-sm text-gray-500">Jan 2026</p>
+
+              <ul className="mt-3 text-base md:text-lg text-gray-700 list-disc list-inside">
+                <li>Applied secure coding practices and handled data in secure systems</li>
+                <li>Developed authentication and encryption-based tools</li>
+                <li>Identified and mitigated vulnerabilities using real-world security practices</li>
+              </ul>
+            </div>
           </div>
         </section>
 
